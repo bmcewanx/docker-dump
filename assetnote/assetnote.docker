@@ -5,7 +5,7 @@ RUN chmod 0644 /etc/cron.d/threatcrowd
 RUN touch /var/log/cron.log
 RUN mkdir -p /home/deploy/
 WORKDIR /home/deploy/
-RUN git clone https://github.com/infosec-au/assetnote
+RUN git clone https://github.com/benmcewan1/assetnote-poc
 WORKDIR /home/deploy/assetnote/
 RUN pip install -r requirements.txt
 RUN pip install flask_sqlalchemy flask_seasurf flask_security
