@@ -3,14 +3,14 @@ RUN apt-get update && apt-get install python-dev bash default-libmysqlclient-dev
 ADD ./files/cron /etc/cron.d/threatcrowd
 RUN chmod 0644 /etc/cron.d/threatcrowd
 RUN touch /var/log/cron.log
-RUN mkdir -p ~/Documents/home/deploy/
-WORKDIR ~/Documents/home/deploy/
-RUN git clone https://github.com/benmcewan1/assetnote-poc
-WORKDIR ~/Documents/home/deploy/assetnote/
+RUN mkdir -p ~/assetty
+WORKDIR ~/assetty/deploy/
+RUN git clone https://github.com/bmcewanx/assetnote
+WORKDIR ~/assetty/deploy/assetnote/
 RUN pip install flask_sqlalchemy flask_seasurf flask_security SQLAlchemy MySQL-python bcrypt python-pushover ndg-httpsclient pyasn1
-ADD ./files/entrypoint.sh ~/Documents/home/deploy/assetnote/entrypoint.sh
-ADD ./files/config.py ~/Documents/home/deploy/assetnote/config.py
-ADD ./files/assetnote.py ~/Documents/home/deploy/assetnote/assetnote.py
-RUN chmod -R 777 ~/Documents/home/deploy/
-ENTRYPOINT ["~/Documents/home/deploy/assetnote/entrypoint.sh"]
+ADD ./files/entrypoint.sh ~/assetty/deploy/assetnote/entrypoint.sh
+ADD ./files/config.py ~/assetty/deploy/assetnote/config.py
+ADD ./files/assetnote.py ~/assetty/deploy/assetnote/assetnote.py
+RUN chmod -R 777 ~/assetty/deploy/
+ENTRYPOINT ["~/assetty/deploy/assetnote/entrypoint.sh"]
 #CMD ["cron && tail -f /var/log/cron.log"]
