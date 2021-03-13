@@ -1,1 +1,1 @@
-*/11 * * * * /usr/bin/timeout 30m python ~/assetty/deploy/assetnote/managers/threatcrowd.py > ~/assetty/deploy/tc_log.txt 2>&1
+*/11 * * * * /usr/bin/timeout 30m python /home/kali/assetty/deploy/assetnote/managers/threatcrowd.py > /home/kali/assetty/deploy/tc_log.txt 2>&1
