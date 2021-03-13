@@ -1,2 +1,2 @@
 #!/bin/bash
-python ~/assetty/deploy/assetnote/assetnote.py
+python /home/kali/assetty/deploy/assetnote/assetnote.py
