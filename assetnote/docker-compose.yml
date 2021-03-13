@@ -7,7 +7,7 @@ services:
             context: .
             dockerfile: assetnote.docker
         ports:
-            - 93:80
+            - 93:100
         links:
             - database
             
