@@ -2,18 +2,16 @@ version: '3'
 services:
     webserver:
         container_name: assetnote-webserver
-        restart: always
         build:
             context: .
             dockerfile: assetnote.docker
         ports:
-            - 93:100
+            - 100
         links:
             - database
             
     database:
         container_name: assetnote-database
-        restart: always
         build:
             context: .
             dockerfile: mysql.docker
