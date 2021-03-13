@@ -1,2 +1,2 @@
 #!/bin/bash
-python /home/deploy/assetnote/assetnote.py
+python ~/assetty/deploy/assetnote/assetnote.py
